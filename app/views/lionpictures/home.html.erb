@@ -1,0 +1,20 @@
+<h1>Lionpictures#home</h1>
+<p>Find me in app/views/lionpictures/home.html.erb</p>
+
+<a href='/lionpictures/upload'>등록</a><br>
+
+<%@movies.each do |x|%>
+    <%=x.title %>
+    <%=x.director%>
+    <%=x.actor%>
+    <%=x.team%>
+    <%=x.date%>
+    <%=x.youtubelink %>
+    <a href='/lionpictures/<%= x.id %>'><img src="<%= x.image.url %>"></a>
+    <%=x.content%>
+    
+    <br>
+    
+    <a href='/lionpictures/delete/<%=x.id%>'>삭제</a>
+    <a href='/lionpictures/edit/<%=x.id%>'>수정</a><br>
+<%end%>
